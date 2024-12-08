@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="matthew neward">
+    <link href="css/m8ballcss.css" rel="stylesheet" type="text/css">
+    <title>magic-eight-ball</title>
+</head>
+<body>
+    <div>
+        <p id="magic8BallAnswer"></p>
+        <p id="goodbye"></p>
+        <script>
+
+            //array with answers
+            const answerArray=[`hmmmmmm, come back later, I\'m napping`, `I don\'t know, ask a different magic 8 ball`, `sure, why not?`, `ehhhh, not likely no`, `yuuuuup`, `HAHAHAHAHAHA!!!, wait you\'re serious? no!`, `signs point to yes`, `nope`]
+
+            //set up do loop 
+            let repeat=null
+            do {
+                //random number generator 
+                let RNG=Math.floor(Math.random()*answerArray.length);
+                let m8ball= answerArray[RNG];
+
+                //ask a question
+                prompt(`ASK A YES OR NO QUESTION AND I SHALL ANSWER!!!`)
+
+                //response 
+                alert(m8ball)
+                console.log(m8ball)
+                document.getElementById("magic8BallAnswer").innerhtml=m8ball
+
+                //other half of do loop. 
+                repeat= prompt(`would you like to ask again? yes/no`);
+        }
+            while (repeat.toLowerCase()===`yes`? true : false);
+
+            //exit prompt 
+            prompt(`Thanks for asking, come again`)
+            console.log(`Thanks for asking, come again`)
+            document.getElementById("goodbye").innerHTML=`Thanks for asking, come again`
+        </script>
+    </div>
+</body>
+</html>
